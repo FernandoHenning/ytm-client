@@ -1,0 +1,54 @@
+{
+  "name": "ytm-client",
+  "version": "1.0.0",
+  "description": "A YouTube Music client for Windows built with ElectronJS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . --trace-warnings",
+    "pack": "electron-builder build --windows",
+    "dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FernandoHenning/ytm-client.git"
+  },
+  "keywords": [
+    "Youtube",
+    "Music",
+    "Electron",
+    "Windows",
+    "Music"
+  ],
+  "author": "Fernando Henning Macias",
+  "bugs": {
+    "url": "https://github.com/FernandoHenning/ytm-client/issues"
+  },
+  "homepage": "https://github.com/FernandoHenning/ytm-client#readme",
+  "build": {
+    "appId": "dev.fernandohenning.ytm-client",
+    "directories": {
+      "buildResources": "assets/**"
+    },
+    "productName": "YouTube Music client",
+    "nsis": {
+      "artifactName": "dev.fernandohenning.ytm-client.${version}.${ext}",
+      "uninstallDisplayName": "Youtube Music Client"
+    },
+    "win": {
+      "publish": [],
+      "target": [
+        "nsis",
+        "msi"
+      ],
+      "icon": "./assets/icons/icon.ico"
+    },
+    "extraResources": [
+      "./assets/**"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^24.6.3"
+  },
+  "license": "LGPL-3.0-or-later"
+}
