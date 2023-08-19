@@ -7,6 +7,10 @@ I'm not a fan of web apps embedded in native apps, but I was looking for the sim
 
 I have only been able to test on Windows. So, if you find any bugs or problems, feel free to open an issue or send a pull request if you've fixed it.👍
 Also, theres only to build configuration for Windows, so, if you want to use it on Linux or macOS feel free to add it and build it.
+ 
+## Features 
+- It includes all the functionalities offered by YouTube Music, after all it is the web version.
+- Listen to all your music, podcasts or anything else on YouTube Music in the background. You can reopen the window or quit the app from the tray icon depending on your operating system.
 
 ## How to run the source code
 
@@ -14,10 +18,8 @@ Also, theres only to build configuration for Windows, so, if you want to use it 
 2. Install all dependencies: `npm install`
 3. Run it with: `npm start`
 4. If you want to pack the application: `npm run pack`. The resulting .exe and .msi will be in the dist folder. I use Electorn builder for this. 
- 
-## Features 
-- It includes all the functionalities offered by YouTube Music, after all it is the web version.
-- Listen to all your music, podcasts or anything else on YouTube Music in the background. You can reopen the window or quit the app from the tray icon depending on your operating system.
+## Known Issues
+- [ ] The application becomes unresponsive if a second instance is opened while in the background [#1](https://github.com/FernandoHenning/ytm-client/issues/1).
 ---
 ### Credits
 - <a href="https://www.flaticon.es/iconos-gratis/boton-de-play" title="boton-de-play iconos">Icon by Alfredo Hernandez - Flaticon</a>
