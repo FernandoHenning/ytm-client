@@ -47,7 +47,7 @@
     ]
   },
   "devDependencies": {
-    "electron": "^26.0.0",
+    "electron": "^26.2.1",
     "electron-builder": "^24.6.3"
   },
   "license": "LGPL-3.0-or-later"
