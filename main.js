@@ -122,7 +122,7 @@ if (!singleInstanceLock) {
 } else {
     app.on('second-instance', (event, commandLine, workingDirectory) => {
         if (mainWindow) {
-            mainWindow.restore();
+            mainWindow.show();
             mainWindow.focus();
         }
     });
