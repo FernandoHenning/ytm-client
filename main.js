@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, Tray, nativeImage } = require('electron');
+const { app, BrowserWindow, Menu, Tray, nativeImage, ipcMain, screen } = require('electron');
 const path = require('path');
 
 
@@ -53,7 +53,10 @@ function createWindow() {
         center: true,
 
         webPreferences: {
-            preload: path.join(__dirname, 'src', 'preload.js')
+            preload: path.join(__dirname, 'src', 'preload.js'),
+            nodeIntegration: false,
+            contextIsolation: true,
+
         },
         title: 'Youtube Music Client',
         backgroundMaterial: 'tabbed',
@@ -66,6 +69,11 @@ function createWindow() {
     configWindowBehavior(mainWindow);
 
 }
+
+ipcMain.on('get-primary-screen-id', (event) => {
+    const primaryDisplay = screen.getPrimaryDisplay();
+    event.reply('primary-screen-id', primaryDisplay.id);
+  });
 
 function configWindowBehavior(window) {
     window.on('page-title-updated', (evt) => {
@@ -109,15 +117,15 @@ app.whenReady().then(() => {
 });
 
 
-if(!singleInstanceLock){
+if (!singleInstanceLock) {
     app.quit();
-}else{
+} else {
     app.on('second-instance', (event, commandLine, workingDirectory) => {
         if (mainWindow) {
-          mainWindow.restore();
-          mainWindow.focus();
+            mainWindow.restore();
+            mainWindow.focus();
         }
-      });
+    });
 }
 
 app.on('window-all-closed', () => {
