@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron . --trace-warnings",
-    "pack": "electron-builder build --windows",
+    "pack-windows": "electron-builder build --windows",
+    "pack-debian": "electron-builder build --linux",
     "dist": "electron-builder"
   },
   "repository": {
@@ -19,9 +20,10 @@
     "Windows",
     "Music"
   ],
-  "author": "Fernando Henning Macias",
+  "author": "Fernando Henning <fernando_hema@hotmail.com> (https://fernandohenning.github.io/my-website/)",
   "bugs": {
-    "url": "https://github.com/FernandoHenning/ytm-client/issues"
+    "url": "https://github.com/FernandoHenning/ytm-client/issues",
+    "email": "fernando_hema@hotmail.com"
   },
   "homepage": "https://github.com/FernandoHenning/ytm-client#readme",
   "build": {
@@ -41,6 +43,13 @@
         "msi"
       ],
       "icon": "./assets/icons/icon.ico"
+    },
+    "linux": {
+      "publish": [],
+      "target": [
+        "deb"
+      ],
+      "icon": "./assets/icons/icon.png"
     },
     "extraResources": [
       "./assets/**"
