@@ -19,7 +19,7 @@ Keep in mind that to use the tray icon funcionality you need to install a extens
 1. First, clone the repository: `https://github.com/FernandoHenning/ytm-client.git`
 2. Install all dependencies: `npm install`
 3. Run it with: `npm start`
-4. If you want to pack the application: `npm run pack-win` (Windows) `npm run pack-debian` (Debian 12). The resulting .exe and .msi will be in the dist folder. I use Electorn builder for this. 
+4. If you want to pack the application: `npm run pack-win` (Windows) output: .exe and .msi. `npm run pack-debian` (Debian 12) output: .deb file. The output will be in the dist folder. I use Electorn builder for this. 
 ## Known Issues
 - [x] **Resolved** The application becomes unresponsive if a second instance is opened while in the background [#1](https://github.com/FernandoHenning/ytm-client/issues/1).
 - [ ] App icon not working on Linux installation.
